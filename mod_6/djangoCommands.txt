@@ -1,0 +1,12 @@
+#install django via anaconda
+conda install -c anaconda django
+
+#start a new project. Can have multiple apps
+django-admin startproject mySite
+
+#run the project
+python3 ./manage.py runserver
+
+#make a new app inside the project
+#all of these apps should be added to the installed app inside the settings.py
+django-admin startapp blog
