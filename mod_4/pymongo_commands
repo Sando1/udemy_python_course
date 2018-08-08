@@ -1,0 +1,55 @@
+#install
+conda install -c anaconda pymongo
+
+#adding a new mongo instance
+import pymongo
+from pymongo import MongoClient
+client = MongoClient()
+#OR
+client = MongoClient('localhost', 27017)
+#OR
+client = MongoClient('mongodb://localhost:27017/')
+
+
+#getting a database
+db = client.test_database
+
+#getting a collection
+collection = db.test_collection
+
+#making a post
+import datetime
+post = {"author": "Mike",
+        "text": "My first blog post!",
+        "tags": ["mongodb", "python", "pymongo"],
+        "date": datetime.datetime.utcnow()}
+
+#inserting a post
+posts = db.posts
+#returns the object id that is inserted successfully
+post_id = posts.insert_one(post).inserted_id
+
+#count all posts
+posts.count()
+
+#count all posts based on author
+posts.find({"author": "Mike"}).count()
+
+#getting a single file
+import pprint
+pprint.pprint(posts.find_one())
+#or based on author
+pprint.pprint(posts.find_one({"author": "Mike"}))
+#or based on object id
+pprint.pprint(posts.find_one({"_id": post_id}))
+
+#more than one insert
+result = posts.insert_many(new_posts)
+
+#for more than one find
+for post in posts.find():
+    pprint.pprint(post)
+
+#indexing in pymongo
+#creates unique index on user_id
+result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],unique=True)
