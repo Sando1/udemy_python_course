@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 # Create your models here.
 class Post(models.Model):
@@ -9,6 +9,7 @@ class Post(models.Model):
     content = models.TextField()
     published = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='img', default='placeholder.png')
 
     class Meta:
         ordering = ['-created']
@@ -16,5 +17,5 @@ class Post(models.Model):
         def __unicode__(self):
             return u'%s'%self.title
 
-        def get_absolute_url(self):
-            return reverse('blog.views.post', args =[self.slug])
+    def get_absolute_url(self):
+        return reverse('blog.views.post', args =[self.slug])

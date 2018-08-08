@@ -1,0 +1,13 @@
+{% extends 'two_column.html' %}
+
+{% block title%}{{ post.title }}{% endblock %}
+
+{% block entry %}
+<div class="container">
+    <h2>{{ post.title }}</h2>
+
+    <div>
+        {{ post.content|linebreaks }}
+    </div>
+</div>
+{% endblock%}

@@ -10,3 +10,42 @@ python3 ./manage.py runserver
 #make a new app inside the project
 #all of these apps should be added to the installed app inside the settings.py
 django-admin startapp blog
+
+#migrate
+python3 ./manage.py migrate
+
+#make a new migration
+python3 ./manage.py makemigrations
+
+#creation of superuser
+python3 ./manage.py createsuperuser
+
+#database- creates the database from our models
+python3 ./manage.py syncdb
+
+#validates the definations with our models
+python3 ./manage.py validate
+
+#migrate for particular app
+python3  ./manage.py makemigrations blog
+
+python3  ./manage.py migrate --fake blog
+
+#Fast fix.
+
+#First remove field images, Then
+
+python manage.py makemigrations
+python manage.py migrate
+
+#If any error happens
+
+python manage.py migrate --fake
+
+#Then add field images.Then
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+

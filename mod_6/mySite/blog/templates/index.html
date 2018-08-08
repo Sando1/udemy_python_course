@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="font-weight-light thin text-center">Recents Posts</h1>
+    </div>
+
+    {% for post in posts %}
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header" style="background:url({{ post.image.url }})">
+                 <h5 class="post-title"><a href="posts/{{ post.slug }}">{{ post.title }}</a></h5>
+            </div>
+            <p>{{ post.summary }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock%}
