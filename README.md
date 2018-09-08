@@ -27,3 +27,4 @@ Module 9: Matplotlib and Pandas Basics
           Using Matplotlibs to make line charts, bar charts and pie charts with the help of pandas
 
 Module 10: Speech Recognition and AI
+          Using Pyglet, speech_recognition and pyaudio to build a recording and answering software that uses beautiful soup to search google and answer simple questions
