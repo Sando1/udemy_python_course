@@ -19,7 +19,8 @@ Module 5: Webpy Basics.
 Module 6: Django Basics
           Using Django to make a basic blog site.
 
-Module 7:
+Module 7: GUI programming in Python with PyQt basics
+          The module contains basic GUI concepts with a calulator app made in python
 
 Module 8:
 
