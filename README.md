@@ -22,7 +22,8 @@ Module 6: Django Basics
 Module 7: GUI programming in Python with PyQt basics
           The module contains basic GUI concepts with a calulator app made in python
 
-Module 8:
+Module 8: Advanced GUI Programming with PyQt
+          Porject is to make a web browser.
 
 Module 9: Matplotlib and Pandas Basics
           Using Matplotlibs to make line charts, bar charts and pie charts with the help of pandas
